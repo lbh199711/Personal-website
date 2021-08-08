@@ -1,0 +1,32 @@
+// globally used
+// colors
+$color-white: #fff;
+$color-black: #000;
+$color-antique-gray: #cfd8d9;
+$color-blue-stone: #176c67;
+$color-cyprus: #0b3230;
+$color-elf-green: #1D8A84;
+
+// color mapping
+$color-bg: $color-antique-gray;
+$color-primary: $color-white;
+$color-text: $color-black;
+$color-button-text: $color-white;
+$color-link: $color-cyprus;
+$color-link-highlight: $color-elf-green;
+$color-button: $color-blue-stone;
+$color-button-highlight: $color-elf-green;
+
+
+// font size
+$font-size-lg: 2rem;
+$font-size-md2: 1.25rem;
+$font-size-md: 1.125rem;
+$font-size-sm: 1rem;
+
+// font family
+$font-primary: Consolas, Monaco, monospace;
+
+// letter spacing
+$letter-spacing-default: -1px;
+$letter-spacing-original: 0;
