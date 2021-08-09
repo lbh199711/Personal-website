@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <Banner title="&#129409; What is up, my friend &#129409;" :text=banner_text />
+    <Banner title="What is up, my friend &#129409;" :text=banner_text />
     <Projects />
+    <Experience />
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 // @ is an alias to /src
 import Banner from '@/components/Banner.vue'
 import Projects from '@/components/section/Projects.vue'
+import Experience from '@/components/section/Experience.vue'
 
 export default {
   name: 'Home',
   components: {
     Banner,
-    Projects
+    Projects,
+    Experience
   },
   data () {
     return {

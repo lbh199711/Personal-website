@@ -29,6 +29,11 @@ export default {
         width: $global-width;
         margin: auto;
         text-align: center;
+        
+        @media screen and (max-width: $mobile-width) {
+            padding: 4rem $global-side-padding-mobile;
+            width: $global-width-mobile;
+        }
     }
 
     .banner_title {
@@ -36,5 +41,9 @@ export default {
         font-weight: 600;
 
         margin-bottom: 1rem;
+
+        @media screen and (max-width: $mobile-width) {
+            font-size: $font-size-md2;
+        }
     }
 </style>

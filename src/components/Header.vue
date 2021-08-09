@@ -18,21 +18,26 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     @import '@/assets/scss/_variables.scss';
     .header {
-        font-size: $font-size-md;
         background-color: $color-primary;
         color: $color-text;
 
         width: 100%;
     }
+
     .header__content {
         display: flex;
         justify-content: space-between;
         width: $global-width;
         margin: auto;
         padding: 2rem $global-side-padding 1.75rem;
+
+        @media screen and (max-width: $mobile-width) {
+            padding: 2rem $global-side-padding-mobile 1.75rem;
+            width: $global-width-mobile;
+        }
     }
 
     .header__link {

@@ -36,6 +36,10 @@
 
         margin: 0;
         display: block;
+
+        @media screen and (max-width: $mobile-width) {
+            font-size: $font-size-sm;
+        }
     }
 
     a {
