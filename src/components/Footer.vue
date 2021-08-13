@@ -7,8 +7,9 @@
                 I'm thinking possibly 3 lines of text
             </p>
             <div class="footer__links">
-                <a href="https://github.com/lbh199711" class="footer__link">Github</a>
-                <a href="https://www.linkedin.com/in/leo-liu-812984148/" class="footer__link">Linkedin</a>
+                <p class="footer__contact">(604) 368-3156</p>
+                <p class="footer__contact">lbh199711@gmail.com</p>
+                <a href="https://galigio.org/2019/07/08/trained-a-neural-net/" class="footer__button"><button>Funny Meme</button></a>
             </div>
         </div>
     </div>
@@ -30,28 +31,39 @@
     .footer__content {
         width: $global-width;
         padding: 3.75rem $global-side-padding 4rem;
-        justify-content: space-between;
         display: flex;
+        justify-content: space-between;
         margin: auto;
 
         @media screen and (max-width: $mobile-width) {
             padding: 3.75rem $global-side-padding-mobile 4rem;
             width: $global-width-mobile;
+            flex-direction: column;
         }
     }
 
     .footer__text {
         width: 58%;
         margin-right: 2%;
+
+        @media screen and (max-width: $mobile-width) {
+            width: $global-width-mobile;
+            margin: 0 0 2rem;
+        }
     }
 
-    .footer__link {
+    .footer__contact {
         display: block;
-        color: $color-text;
         text-decoration: none;
+    }
 
-        &:hover {
-            color: $color-link-highlight;
+    .footer__button {
+        display: block;
+        width: max-content;
+        margin-top: 0.5rem;
+
+        @media screen and (max-width: $mobile-width) {
+            margin-top: 0.25rem;
         }
     }
 </style>

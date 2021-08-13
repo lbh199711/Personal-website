@@ -7,13 +7,12 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Banner from '@/components/Banner.vue'
 import Projects from '@/components/section/Projects.vue'
 import Experience from '@/components/section/Experience.vue'
 
 export default {
-  name: 'Home',
+  name: 'HomePage',
   components: {
     Banner,
     Projects,

@@ -35,7 +35,7 @@ export default {
         align-items: flex-start;
         justify-content: flex-start;
         width: 48%;
-        margin: 3rem 1% 0 1%;
+        margin: 3rem 1% 1rem 1%;
 
         @media screen and (max-width: $tablet-width) {
             width: 100%;
