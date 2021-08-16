@@ -1,60 +1,78 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  
-  <router-view/>
+    <Header />
+    <router-view />
+    <Footer />
 </template>
 
+<script>
+    import Header from '@/components/Header.vue'
+    import Footer from '@/components/Footer.vue'
+
+    export default {
+        name: 'App',
+        components: {
+            Header,
+            Footer
+        }
+    }
+</script>
+
 <style lang="scss">
-@import '@/assets/scss/_variables.scss';
+    @import '@/assets/scss/_variables.scss';
+    * {
+        box-sizing: border-box;
+    }
 
-body {
-  letter-spacing: $letter-spacing-default;
-  font-size: $font-size-md;
-  font-family: $font-primary;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    body {
+        letter-spacing: $letter-spacing-original;
+        font-size: $font-size-md;
+        font-family: $font-primary;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
 
-  background-color: $color-bg;
-  color: $color-black; 
+        background-color: $color-secondary;
+        color: $color-black; 
 
-  margin: 0;
-  display: block;
-}
+        margin: 0;
+        display: block;
 
-a {
-  color: $color-link;
-  text-decoration: underline;
+        @media screen and (max-width: $mobile-width) {
+            font-size: $font-size-sm;
+            letter-spacing: $letter-spacing-default;
+        }
+    }
 
-  &:hover {
-    color: $color-link-highlight;
-  }
-}
+    a {
+        color: $color-link;
+        text-decoration: underline;
 
-button, .button {
-  font-size: $font-size-md;
+        &:hover {
+            color: $color-link-highlight;
+        }
+    }
 
-  background-color: $color-button;
-  color: $color-button-text;
+    button, .button {
+        font-size: $font-size-md;
+        text-decoration: none;
 
-  padding: .75rem 1.5rem;
-  border: none;
-  border-radius: 0.75rem;
+        background-color: $color-button;
+        color: $color-button-text;
 
-  &:hover {
-    background-color: $color-button-highlight;
-  }
-}
+        padding: .5rem 1rem;
+        border: none;
+        border-radius: 0.75rem;
 
-#nav {
-  padding: 30px;
-  background-color: $color-primary;
+        &:hover {
+            background-color: $color-button-highlight;
+        }
 
-  a {
-    font-weight: bold;
-  }
-}
+        @media screen and (max-width: $mobile-width) {
+            font-size: $font-size-sm;
+        }
+    }
+
+    h1,h2,h3,h4,h5,h6,p{
+        margin: 0;
+    }
 </style>

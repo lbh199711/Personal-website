@@ -8,8 +8,9 @@ $color-cyprus: #0b3230;
 $color-elf-green: #1D8A84;
 
 // color mapping
-$color-bg: $color-antique-gray;
 $color-primary: $color-white;
+$color-secondary: $color-antique-gray;
+$color-highlight: $color-blue-stone;
 $color-text: $color-black;
 $color-button-text: $color-white;
 $color-link: $color-cyprus;
@@ -20,8 +21,9 @@ $color-button-highlight: $color-elf-green;
 
 // font size
 $font-size-lg: 2rem;
-$font-size-md2: 1.25rem;
-$font-size-md: 1.125rem;
+$font-size-md3: 1.75rem;
+$font-size-md2: 1.5rem;
+$font-size-md: 1.25rem;
 $font-size-sm: 1rem;
 
 // font family
@@ -30,3 +32,13 @@ $font-primary: Consolas, Monaco, monospace;
 // letter spacing
 $letter-spacing-default: -1px;
 $letter-spacing-original: 0;
+
+// padding
+$global-side-padding: 2.5rem;
+$global-side-padding-mobile: 1.5rem;
+$global-width: 85%;
+$global-width-mobile: 100%;
+
+// width
+$tablet-width: 80rem;
+$mobile-width: 47.99rem;
