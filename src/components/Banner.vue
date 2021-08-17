@@ -21,7 +21,10 @@ export default {
     @import '@/assets/scss/_variables.scss';
     .banner {
         background-color: $color-secondary;
+
+        max-width: $global-max-width;
         display: block;
+        margin: auto;
     }
 
     .banner__content {

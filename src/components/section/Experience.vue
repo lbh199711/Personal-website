@@ -21,13 +21,13 @@ export default {
 <style lang="scss">
     @import '@/assets/scss/_variables.scss';
     .experience {
-        background-color: $color-primary;
         display: block;
     }
 
     .experience__content {
         padding: 4rem $global-side-padding 10rem;
         width: $global-width;
+        max-width: $global-max-width;
         margin: auto;
 
         @media screen and (max-width: $mobile-width) {

@@ -1,0 +1,26 @@
+{
+    "title": "Generating Landscape painting using DCGAN [64x64]",
+    "data": "https://www.kaggle.com/robgonsalves/impressionistlandscapespaintings",
+    "url": "https://github.com/lbh199711/DCGAN-painting-64x64",
+    "content": [
+        {"type":"heading", "value":"Description"},
+        {"type":"text","value":"Tensorflow implementation of Deep Convolutional Generative Adversarial Network (DCGAN) using custom data found in Kaggle. The training data consist of 5000 impressionist landscape paintings in 1024x1024 RGB format. The goal of this project is to generate 'fake' paintings. The generated paintings should look somewhat like the real one's input, yet be diverse and not look EXACTLY like the input ones. "},
+        {"type":"text","value":"In this project, the images are resized to 64x64 RGB format to make the learning process easier. There may be a future project targeting 128x128 sized images."},
+        {"type":"heading", "value":"Input Sample"},
+        {"type":"image", "value":"DCGAN__input.png"},
+        {"type":"heading", "value":"How does it work"},
+        {"type":"text", "value":"This network makes use of two models working against each other, a generator and a discriminator. The generator generates an image, then the discriminator is presented with one real image taken from the dataset and the generated image. The generator work towards fooling the discriminator and the discriminator work towards detecting the real image."},
+        {"type":"heading", "value":"Generator"},
+        {"type":"text", "value":"1 Dense layer with 4x4x512 units reshaped to (4,4,512)."},
+        {"type":"text", "value":"4 Transposed convolution layer with strides=2 and [256,128,64,3] kernels. Size map from (4,4,512) -> (8, 8, 256) -> (16, 16, 128) -> (32, 32, 64) -> (64, 64, 3), output shape matching the image. Each layer except the last uses 'LeakyReLU' activation , batch normalization and 0.2 dropouts. Last layer uses 'tanh' activition with no batch normalization nor dropout."},
+        {"type":"heading", "value":"Discriminator"},
+        {"type":"text", "value":"3 Convolution layer with strides=2 and [64, 128, 256] kernels. The first layer uses 'LeakyReLU' activation and 0.2 dropouts. The second and third layers added batch normalization on top. The output is then flattened to feed into the last layer."},
+        {"type":"text", "value":"1 Dense layer with 'sigmoid' activation to output the prediction of whether the image is real. "},
+        {"type":"heading", "value":"Loss"},
+        {"type":"link", "value":"How the loss is calculated can be found here", "url":"https://developers.google.com/machine-learning/gan/loss#minimax-loss"},
+        {"type":"heading", "value":"Training"},
+        {"type":"text", "value":"The model learns by training both generator and discriminator at the same time. For each epoch, take batches from the dataset and go through training steps. During each training step, generate images, let the discriminator mark real images taken from the batch and fake images generated. Both models will then calculate the loss and gradients to update."},
+        {"type":"heading", "value":"Output Sample"},
+        {"type":"image", "value":"DCGAN__output.png"}
+    ]
+}

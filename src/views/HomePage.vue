@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home-page">
     <Banner title="What is up, my friend &#129409;" :text=banner_text />
     <Projects />
     <Experience />
@@ -20,7 +20,7 @@ export default {
   },
   data () {
     return {
-      banner_text: "First of all, Welcome! Welcome to the place where I dump all the cool stuff I have been working on!"
+      banner_text: "Welcome to the place where I dump all the cool stuff I have been working on!"
     }
   }
 }
