@@ -31,7 +31,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
 
-        background-color: $color-secondary;
+        background-color: $color-primary;
         color: $color-black; 
 
         margin: 0;

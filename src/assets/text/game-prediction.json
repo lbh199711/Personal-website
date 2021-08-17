@@ -1,0 +1,21 @@
+{
+    "title": "Predicting league of legends game result with different machine learning methods",
+    "data": "https://www.kaggle.com/bobbyscience/league-of-legends-diamond-ranked-games-10-min",
+    "url": "https://github.com/lbh199711/game-prediction-ML",
+    "content": [
+        {"type":"heading", "value":"Introduction"},
+        {"type":"text","value":"League of Legends is a popular competitive online game, where a total of 10 players are split into blue and red teams. Players will choose unique characters to fight against the opponent’s team. The goal of the game is to destroy the other team’s Nexus."},
+        {"type":"text","value":"In this experiment, we will be going through several methods of machine learning models to try to predict the result of the game and compare their performance."},
+        {"type":"heading", "value":"Experiment"},
+        {"type":"text", "value":"The data set we are using is found on Kaggle. This dataset contains the stats for the game at the 10 minutes mark. Players have similar skill levels due to the game’s matchmaking system. 19 features are indicating the stats per team (38 in total) collected in-game. This includes kills, deaths, gold, experience, etc. The target has a value of 1 or 0, indicating whether the blue team has won at the end of the game. There are around 10,000 samples in total."},
+        {"type":"text", "value":"In this experiment, we will apply different machine learning models to this data set and compare their performance with each other, and also with the baseline model."},
+        {"type":"heading", "value":"Method"},
+        {"type":"text", "value":"We will test out 3 machine learning models on this dataset: Linear regression, Logistic regression, and 1-layer Neural Network. For all 3 models, we will be using TensorFlow’s neural network framework for ease of implementation."},
+        {"type":"text", "value":"Before any game has been played, theoretically speaking either side should have an equal chance of winning. The point of the task is to predict as many games correctly as possible, and so, we set the measure of success to the accuracy of the model’s prediction comparing to the target."},
+        {"type":"text", "value":"The dataset is split 60-20-20 into training, validation, and testing set. All the features in the datasets are normalized by the training data. This assumes validation and testing sets will have similar distribution when compared to the training data."},
+        {"type":"text", "value":"The dataset is split 60-20-20 into training, validation, and testing set. All the features in the datasets are normalized by the training data. This assumes validation and testing sets will have similar distribution when compared to the training data."},
+        {"type":"text", "value":"During training, we will use the grid search to optimize the hyperparameters using the validation accuracy, then use the best model against the test dataset."},
+        {"type":"heading", "value":"Full Report"},
+        {"type":"link", "value":"See the full report of this experiment", "url":"https://github.com/lbh199711/game-prediction-ML/blob/main/Game%20Result%20Prediction%20Through%20Different%20Models%20in%20Machine%20Learning.pdf"}
+    ]
+}
