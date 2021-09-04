@@ -5,6 +5,14 @@ import os
 import json
 
 # helper functions
+# General util functions
+def bundle_request_data(data, signature="serving_default"):
+    request_data = json.dumps({
+        "signature_name": signature,
+        "instances": data.tolist()
+    })
+    return request_data
+    
 # SentimentAnalysisView util functions
 def load_word_index(json_path):
     a_file = open(os.path.join(settings.BASE_DIR, json_path), "r")
@@ -44,4 +52,5 @@ def process_data_SA(data, word_index):
     elif num_list_length < seq_lenght:
         padding = np.zeros(seq_lenght - num_list_length, dtype=int)
         num_list = np.append(padding, num_list)
-    return num_list
+    # reshape to -1,500
+    return np.reshape(num_list,(-1,500))

@@ -5,9 +5,10 @@ from rest_framework import status
 from django.conf import settings
 
 from .serializers import sentimentAnalysisSerializer
-from .utils import remove_punct, process_data_SA, load_word_index
+from .utils import remove_punct, process_data_SA, load_word_index, bundle_request_data
 
 import numpy as np
+import requests
 
 # Create your views here.
 class SentimentAnalysisView(views.APIView):
@@ -17,7 +18,7 @@ class SentimentAnalysisView(views.APIView):
     def get(self, request):
         return Response({'request':'a'}, status=status.HTTP_200_OK)
 
-    def post(self, request):
+    def post(self, request):        
         input_string = request.data.get("input_string", None)
 
         # validate input data
@@ -26,8 +27,21 @@ class SentimentAnalysisView(views.APIView):
 
         # process input data
         processed_data = process_data_SA(serializer.data, self.word_index)
-        print("processed_data shape: ", processed_data.shape)
 
         # call tf serving
+        error = False
+        url = settings.SERVING_URL + "SA_model:predict"
+        headers = {"content-type": "application/json"}
+        request_data = bundle_request_data(processed_data)
 
-        return Response({'request':processed_data}, status=status.HTTP_200_OK)
+        try:
+            response = requests.post(url, data=request_data, headers=headers)
+        except requests.exceptions.ConnectionError as e:
+            return Response({'error': str(e)},status.HTTP_400_BAD_REQUEST)
+
+        try:
+            prediction = response.json().get('predictions')[0][0]
+        except IndexError as e:
+            return Response({'error': str(e)},status.HTTP_400_BAD_REQUEST)
+
+        return Response({'prediction':prediction}, status=status.HTTP_200_OK)
