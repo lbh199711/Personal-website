@@ -68,10 +68,10 @@
     .footer__button {
         display: block;
         width: max-content;
-        margin-top: 0.5rem;
+        margin-top: .5rem;
 
         @media screen and (max-width: $mobile-width) {
-            margin-top: 0.25rem;
+            margin-top: .25rem;
         }
     }
 </style>

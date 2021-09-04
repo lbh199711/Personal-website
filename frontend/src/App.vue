@@ -61,7 +61,7 @@
 
         padding: .5rem 1rem;
         border: none;
-        border-radius: 0.75rem;
+        border-radius: .75rem;
 
         &:hover {
             background-color: $color-button-highlight;

@@ -41,7 +41,7 @@ export default {
     .experienceCard__job {
         margin-top: 1rem;
         @media screen and (max-width: $mobile-width) {
-            margin-top: 0.5rem;
+            margin-top: .5rem;
         }
     }
     
