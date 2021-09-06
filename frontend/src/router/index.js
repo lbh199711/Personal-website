@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../views/HomePage.vue'
 import ProjectPage from '../views/ProjectPage.vue'
+import SaModelPage from '../views/SaModelPage.vue'
 import PageNotFound  from '../views/PageNotFound.vue'
+
 
 const routes = [
     {
@@ -14,6 +16,12 @@ const routes = [
         name: 'ProjectPage',
         component: ProjectPage
     },
+    {
+        path: '/sa_model',
+        name: 'SaModelPage',
+        component: SaModelPage
+    }
+    ,
     {
         path: '/404',
         name: '404',
