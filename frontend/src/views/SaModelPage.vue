@@ -1,6 +1,6 @@
 <template>
     <div class="sa-model-page">
-        <Banner title="Movie Review Sentiment Analysis" />
+        <Banner title="Sentiment Analysis Model" />
         <div v-show="!modelStatus" class="loading__wrapper">
             <p class="loading__mesage"> waiting for model to load </p> 
             <Loader class="loading__animation"/>
@@ -19,10 +19,6 @@
                 <h3 class="model__heading">Model Description:</h3>
                 <p class="model__text--indent">{{modelDescription}}</p>
 
-                <h3 class="model__heading">Test out the model here:</h3>
-                <textarea v-model="inputString" :placeholder="placeholder" class="model__input" maxlength="8000" minlength="1"></textarea>
-                <div class="model__button-wrapper"><button v-on:click="analyze">Analyze Text</button></div>
-
                 <h3 class="model__heading" v-show="modelOutput != null">Model Output:</h3>
                 <p v-show="modelOutput != null" class="model__text--indent">
                     Sentiment Value (0 is negative, 1 is positive):
@@ -32,7 +28,11 @@
                     Overall, the model thinks the review has a 
                     <span :class="'model__output--'+model_sentiment">{{model_sentiment}}</span>
                     sentiment towards the movie
-                    </p>
+                </p>
+
+                <h3 class="model__heading">Test out the model here:</h3>
+                <textarea v-model="inputString" :placeholder="placeholder" class="model__input" maxlength="8000" minlength="1"></textarea>
+                <div class="model__button-wrapper"><button v-on:click="analyze" :disabled="!modelAvailable">Analyze Text</button></div>
             </div>
         </div>
 
@@ -77,10 +77,13 @@ export default {
 
             if (typeof this.inputString !=  "string") {
                 this.errorMsg = 'Input must be string.'
+                this.modelOutput = null
             } else if (this.inputString.length < 1) {
                 this.errorMsg = 'The input cannot be empty.'
+                this.modelOutput = null
             } else if (this.inputString.length > 8000) {
                 this.errorMsg = 'The input exceed maximum character count of 8000.'
+                this.modelOutput = null
             } else {
                 axios({
                     method: 'post',
@@ -162,7 +165,7 @@ export default {
     .model__heading {
         font-size: $font-size-md2;
 
-        margin: 3rem 0 1.5rem;
+        margin: 4rem 0 1.5rem;
         .model__status & {
             margin-top: 0;
         }
@@ -170,14 +173,14 @@ export default {
         @media screen and (max-width: $mobile-width) {
             font-size: $font-size-md;
 
-            margin: 2rem 0 1rem;
+            margin: 3rem 0 1rem;
         }
     }
 
     .model__text--indent {
-        margin: 0.5rem 0 0 3rem;
+        margin: 0.5rem 0 0 2rem;
         @media screen and (max-width: $mobile-width) {
-            margin-left: 1.5rem;
+            margin-left: 1rem;
         }
     }
 

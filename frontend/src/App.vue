@@ -65,6 +65,12 @@
 
         &:hover {
             background-color: $color-button-highlight;
+            cursor: pointer;
+        }
+
+        &:disabled {
+            background-color: $color-gray;
+            cursor: not-allowed;
         }
 
         @media screen and (max-width: $mobile-width) {
