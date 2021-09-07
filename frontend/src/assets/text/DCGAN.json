@@ -7,7 +7,7 @@
         {"type":"text","value":"Tensorflow implementation of Deep Convolutional Generative Adversarial Network (DCGAN) using custom data found in Kaggle. The training data consist of 5000 impressionist landscape paintings in 1024x1024 RGB format. The goal of this project is to generate 'fake' paintings. The generated paintings should look somewhat like the real one's input, yet be diverse and not look EXACTLY like the input ones. "},
         {"type":"text","value":"In this project, the images are resized to 64x64 RGB format to make the learning process easier. There may be a future project targeting 128x128 sized images."},
         {"type":"heading", "value":"Input Sample"},
-        {"type":"image", "value":"DCGAN__input.png"},
+        {"type":"image", "value":"https://user-images.githubusercontent.com/31713252/132143941-8871fbe8-1e1c-4ff2-a885-18febfd428de.png"},
         {"type":"heading", "value":"How does it work"},
         {"type":"text", "value":"This network makes use of two models working against each other, a generator and a discriminator. The generator generates an image, then the discriminator is presented with one real image taken from the dataset and the generated image. The generator work towards fooling the discriminator and the discriminator work towards detecting the real image."},
         {"type":"heading", "value":"Generator"},
@@ -21,6 +21,6 @@
         {"type":"heading", "value":"Training"},
         {"type":"text", "value":"The model learns by training both generator and discriminator at the same time. For each epoch, take batches from the dataset and go through training steps. During each training step, generate images, let the discriminator mark real images taken from the batch and fake images generated. Both models will then calculate the loss and gradients to update."},
         {"type":"heading", "value":"Output Sample"},
-        {"type":"image", "value":"DCGAN__output.png"}
+        {"type":"image", "value":"https://user-images.githubusercontent.com/31713252/129493893-40d42d59-a6f3-44c1-93ce-8427448d6c7c.png"}
     ]
 }

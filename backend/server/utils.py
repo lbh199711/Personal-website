@@ -52,5 +52,7 @@ def process_data_SA(data, word_index):
     elif num_list_length < seq_lenght:
         padding = np.zeros(seq_lenght - num_list_length, dtype=int)
         num_list = np.append(padding, num_list)
+        
+    num_list = num_list.astype('int64')
     # reshape to -1,500
     return np.reshape(num_list,(-1,500))

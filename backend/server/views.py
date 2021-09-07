@@ -15,9 +15,25 @@ class SentimentAnalysisView(views.APIView):
     serializer_class = sentimentAnalysisSerializer
     word_index = load_word_index("assets/word_index.json") #make sure it has correct word counts
 
+    # get model status
     def get(self, request):
-        return Response({'request':'a'}, status=status.HTTP_200_OK)
+        # call tf serving
+        error = False
+        url = settings.SERVING_URL + "SA_model"
 
+        try:
+            response = requests.get(url)
+        except requests.exceptions.ConnectionError as e:
+            return Response({'error': str(e)},status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            model_status = response.json().get('model_version_status')
+        except IndexError as e:
+            return Response({'error': str(e)},status.HTTP_400_BAD_REQUEST)
+
+        return Response({'response':model_status}, status=status.HTTP_200_OK)
+
+    # use model to predict
     def post(self, request):        
         input_string = request.data.get("input_string", None)
 
@@ -44,4 +60,6 @@ class SentimentAnalysisView(views.APIView):
         except IndexError as e:
             return Response({'error': str(e)},status.HTTP_400_BAD_REQUEST)
 
-        return Response({'prediction':prediction}, status=status.HTTP_200_OK)
+        return Response({'response':{
+            'prediction': prediction
+            }}, status=status.HTTP_200_OK)

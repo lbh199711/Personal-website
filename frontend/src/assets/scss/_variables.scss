@@ -7,6 +7,7 @@ $color-blue-stone: #176c67;
 $color-cyprus: #0b3230;
 $color-elf-green: #1D8A84;
 $color-red: #6C171C;
+$color-gray: #aab6ae;
 
 // color mapping
 $color-primary: $color-white;
@@ -19,6 +20,8 @@ $color-link-highlight: $color-elf-green;
 $color-button: $color-blue-stone;
 $color-button-highlight: $color-elf-green;
 $color-warning: $color-red;
+$color-loader: $color-blue-stone;
+$color-disabled: $color-gray;
 
 // font size
 $font-size-lg: 2rem;

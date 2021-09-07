@@ -1,0 +1,24 @@
+{
+    "title": "Sentiment Analysis with IMDb Movie Reviews ",
+    "data": "https://www.kaggle.com/ducanger/imdb-dataset",
+    "url": "https://github.com/lbh199711/sentiment-analysis-CNN-LSTM/",
+    "content": [
+        {"type":"heading", "value":"Playground"},
+        {"type":"link", "value":"Experience with the deployed model here.", "url":"/sa_model"},
+        {"type":"heading", "value":"Description"},
+        {"type":"text","value":"IMDb review sentiment analysis model created in TensorFlow with CNN+LSTM+GloVe Twiter Embeddings. The model takes in movie review as a list of word indexes and output a decimal between 0 and 1, representing the sentiment of the review toward the movie. "},
+        {"type":"text","value":"The data consists of 50k IMDb movie reviews split into 7/1/2 training/validation/testing sets."},
+        {"type":"heading", "value":"Input Data"},
+        {"type":"image", "value":"https://user-images.githubusercontent.com/31713252/132416994-940815fa-c57a-4aa2-9213-855a94d7623e.jpg"},
+        {"type":"text", "value":"In this project, the punctuations are taken out from the data as part of the data preprocessing. Afterward, the words are tokenized as word indexes for model input."},
+        {"type":"heading", "value":"Model"},
+        {"type":"image", "value":"https://user-images.githubusercontent.com/31713252/132417398-a99a2130-0aa6-4eec-9006-a0c11c4d4bd0.jpg"},
+        {"type":"text", "value":"The model uses the GloVe pre-trained word embeddings (Twitter 200d)"},
+        {"type":"text", "value":"Followed by 3 convolutional layers"},
+        {"type":"text", "value":"Then a bidirectional LSTM layer"},
+        {"type":"text", "value":"Ends with 2 dense layers to output prediction"},
+        {"type":"heading", "value":"Model Evaluation"},
+        {"type":"image", "value":"https://user-images.githubusercontent.com/31713252/132417595-ae23ba1c-e7a1-4798-9cfc-5d2b78593a30.png"},
+        {"type":"text", "value":"The model achieved 91.36% validation accuracy on its best epoch, with a 91.21% test accuracy."}
+    ]
+}

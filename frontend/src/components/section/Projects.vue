@@ -2,9 +2,9 @@
     <div class="projects">
         <div class="projects__content">
             <h2 class="projects__header">Projects</h2>
+            <ProjectCard imgName="sentiment-analysis.png" imgDescription="Logo for IMDb" title="Movie Review Sentiment Analysis" text="Movie review sentiment analysis model created with CNN + LSTM + GloVe Embeddings." link="/project/sentiment-analysis" />
             <ProjectCard imgName="DCGAN.jpg" imgDescription="Image collage made by 9 landscape paintings " title="Generate Paintings Using DCGAN" text="Tensorflow implementation of Deep Convolutional Generative Adversarial Network (DCGAN)" link="/project/DCGAN" />
             <ProjectCard imgName="game-prediction.png" imgDescription="Logo for the game League of Legends" title="League of Legends Game Result Prediction" text="Predicting League of Legends game result using different machine-learning methods" link="/project/game-prediction" />
-            <ProjectCard imgName="placeholder.jpg" imgDescription="A placeholder image" title="Currently working on..." text="Leo is not working on anything at the moment. He is either very lazy or occupied in other aspect of life right now..." link="/#" />
         </div>
     </div>
 </template>

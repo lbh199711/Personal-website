@@ -13,10 +13,10 @@
                     </div>
 
                     <template v-for="(object,index) in json.content">
-                        <h3 class="project-page-content__heading" v-if="object.type === 'heading'" :key="index">{{object.value}}</h3>
-                        <p class="project-page-content__text" v-if="object.type === 'text'" :key="index">{{object.value}}</p>
-                        <p class="project-page-content__text" v-if="object.type === 'link'" target="_blank" :key="index"><a :href="object.url">{{object.value}}</a></p>
-                        <img class="project-page-content__img" v-if="object.type === 'image'" :key="index" :src="require('@/assets/imgs/' + object.value + '')"/>
+                        <h3 class="project-page-content__heading" v-if="object.type === 'heading'" :key="index+'_heading'">{{object.value}}</h3>
+                        <p class="project-page-content__text" v-else-if="object.type === 'text'" :key="index+'_text'">{{object.value}}</p>
+                        <p class="project-page-content__text" v-else-if="object.type === 'link'" target="_blank" :key="index+'_link'"><a :href="object.url">{{object.value}}</a></p>
+                        <img class="project-page-content__img" v-else-if="object.type === 'image'" :key="index+'_image'" :src="object.value"/>
                     </template>
                 </div>
             </div>
@@ -75,10 +75,10 @@ export default {
 
     .project-page-content__text,
     .project-page-content__img {
-        margin-top: 2rem;
+        margin: 1.5rem 0 0 2rem;
 
         @media screen and (max-width: $mobile-width) {
-            margin-top: 1rem;
+            margin: 1rem 0 0 1rem;
         }
     }
 
