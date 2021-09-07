@@ -9,7 +9,7 @@
             <div class="footer__links">
                 <p class="footer__contact">(604) 368-3156</p>
                 <p class="footer__contact">lbh199711@gmail.com</p>
-                <a href="https://galigio.org/2019/07/08/trained-a-neural-net/" class="footer__button" target="_blank" ><button>Funny Meme</button></a>
+                <a href="https://miro.medium.com/max/475/1*A8bKVrmA9qMhReU0U_KYzw.jpeg" class="footer__button" target="_blank" ><button>Funny Meme</button></a>
             </div>
         </div>
     </div>

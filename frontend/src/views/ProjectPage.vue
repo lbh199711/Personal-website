@@ -75,10 +75,10 @@ export default {
 
     .project-page-content__text,
     .project-page-content__img {
-        margin-top: 2rem;
+        margin: 1.5rem 0 0 2rem;
 
         @media screen and (max-width: $mobile-width) {
-            margin-top: 1rem;
+            margin: 1rem 0 0 1rem;
         }
     }
 
