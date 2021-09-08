@@ -1,6 +1,9 @@
 server {
-	listen 80;
-	server_name _;
+	listen 443 ssl;
+	include snippets/ssl.conf;
+	include snippets/ssl-param.conf;
+
+	server_name www.leoliu.org leoliu.org;
 
 	location = /favicon.ico { access_log off; log_not_found off; }
 	location /static/ {
@@ -14,4 +17,11 @@ server {
 		
 		proxy_pass http://unix:/home/ubuntu/Personal-website/backend/backend.sock;
 	}
+}
+
+server {
+	listen 80;
+	server_name www.leoliu.org leoliu.org;
+	
+	return 302 https://$server_name$request_uri;
 }
