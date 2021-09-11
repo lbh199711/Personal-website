@@ -6,7 +6,7 @@
         {"type":"heading", "value":"Playground"},
         {"type":"link", "value":"Experience with the deployed model here.", "url":"/sa_model"},
         {"type":"heading", "value":"Description"},
-        {"type":"text","value":"IMDb review sentiment analysis model created in TensorFlow with CNN+LSTM+GloVe Twiter Embeddings. The model takes in movie review as a list of word indexes and output a decimal between 0 and 1, representing the sentiment of the review toward the movie. "},
+        {"type":"text","value":"IMDb review sentiment analysis model created in TensorFlow with CNN+LSTM+GloVe Twitter Embeddings. The model takes in movie review as a list of word indexes and output a decimal between 0 and 1, representing the sentiment of the review toward the movie. "},
         {"type":"text","value":"The data consists of 50k IMDb movie reviews split into 7/1/2 training/validation/testing sets."},
         {"type":"heading", "value":"Input Data"},
         {"type":"image", "value":"https://user-images.githubusercontent.com/31713252/132416994-940815fa-c57a-4aa2-9213-855a94d7623e.jpg"},

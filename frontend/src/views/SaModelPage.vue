@@ -20,6 +20,10 @@
                 <p class="model__text--indent">{{modelDescription}}</p>
 
                 <h3 class="model__heading" v-show="modelOutput != null">Model Output:</h3>
+                <p v-show="modelOutput != null" class="model__text--indent model__text--extra-bot-margin">
+                    Input Text: <br>
+                    &emsp; "{{lastInput}}"
+                    </p>
                 <p v-show="modelOutput != null" class="model__text--indent">
                     Sentiment Value (0 is negative, 1 is positive):
                     <span :class="'model__output--'+model_sentiment">{{modelOutput}}</span>
@@ -32,7 +36,7 @@
 
                 <h3 class="model__heading">Test out the model here:</h3>
                 <textarea v-model="inputString" :placeholder="placeholder" class="model__input" maxlength="8000" minlength="1"></textarea>
-                <div class="model__button-wrapper"><button v-on:click="analyze" :disabled="!modelAvailable">Analyze Text</button></div>
+                <div class="model__button-wrapper"><button v-on:click="analyze" :disabled="!modelAvailable || inputString===lastInput">Analyze Text</button></div>
             </div>
         </div>
 
@@ -59,6 +63,7 @@ export default {
             modelOutput: null,
             modelAvailable: false,
             inputString: '',
+            lastInput: null,
             placeholder: "Write your review here, or copy from IMDb.",
             errorMsg: ''
         }
@@ -93,6 +98,8 @@ export default {
                     url: backend_url+'sentiment-analysis'
                 }).then(response => {
                     this.modelOutput = response.data.response.prediction
+                    this.lastInput = this.inputString
+                    this.inputString = ''
                     this.errorMsg = ''
                 })
                 .catch(error => {
@@ -181,6 +188,13 @@ export default {
         margin: 0.5rem 0 0 2rem;
         @media screen and (max-width: $mobile-width) {
             margin-left: 1rem;
+        }
+    }
+
+    .model__text--extra-bot-margin {
+        margin-bottom: 4rem;
+        @media screen and (max-width: $mobile-width) {
+            margin-bottom: 3rem;
         }
     }
 
