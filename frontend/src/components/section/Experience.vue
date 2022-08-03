@@ -2,6 +2,7 @@
     <div class="experience">
         <div class="experience__content">
             <h2 class="experience__header">Professional Experience</h2>
+            <ExperienceCard company="Areto Labs" :jobs="[{'title':'Machine Learning Engineer', 'time':'2021.10 - Current'}]" />
             <ExperienceCard company="Dotdash" :jobs="[{'title':'Contractor (Part Time)', 'time':'2020.01 - 2021.04'},{'title':'Software Developer Intern', 'time':'2019.01 - 2019.12'}]" />
             <ExperienceCard company="Hackhub" :jobs="[{'title':'Web Developer Intern', 'time':'2018.09 - 2018.12'}]" />
         </div>

@@ -2,14 +2,14 @@
     <div class="footer">
         <div class="footer__content">
             <p class="footer__text">
-                -> New University of Alberta computer science graduate<br>
-                -> Future machine learning engineer<br>
+                -> University of Alberta computer science graduate<br>
+                -> Machine learning engineer<br>
                 -> Currently based in Edmonton, Canada
             </p>
             <div class="footer__links">
                 <p class="footer__contact">(604) 368-3156</p>
                 <p class="footer__contact">lbh199711@gmail.com</p>
-                <a href="https://miro.medium.com/max/475/1*A8bKVrmA9qMhReU0U_KYzw.jpeg" class="footer__button" target="_blank" ><button>Funny Meme</button></a>
+                <a href="https://twitter.com/theotheredmund/status/1349453230762196992" class="footer__button" target="_blank" ><button>Funny Meme</button></a>
             </div>
         </div>
     </div>
